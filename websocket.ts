@@ -35,15 +35,13 @@ io.on("connection", (socket) => {
       console.log("User not found");
       return "not found";
     }
-
     const message: Message = {
       text: data.text,
       username: user.username,
       id: randomUUID(),
     };
     messages.push(message);
-
-    io.emit("room message", messages[messages.length - 1]);
+    io.emit("room message", messages);
   });
   socket.emit("get messages", messages);
 });
