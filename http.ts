@@ -10,10 +10,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: [
-      "https://webchat-seven-orpin.vercel.app/",
-      "http://localhost:3000/chat",
-    ],
+    origin: ["https://webchat-seven-orpin.vercel.app", "http://localhost:3000"],
   },
 });
 export { server, io };
